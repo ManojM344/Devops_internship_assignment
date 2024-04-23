@@ -3,7 +3,7 @@
 # Log File Monitoring and Analysis
 
 ## Introduction
-This Python script continuously monitors a specified log file for new entries and performs basic analysis on log entries. It counts occurrences of specific keywords or patterns (e.g., error messages, HTTP status codes) and generates summary reports.
+This Python script continuously monitors a specified log file for new entries and performs real time analysis on log entries. It counts occurrences of specific keywords or patterns (e.g., error messages, HTTP status codes) and generates summary reports.
 
 ## Requirements
 - Python 3.x
@@ -25,10 +25,15 @@ This Python script continuously monitors a specified log file for new entries an
 The script includes basic error handling. If an error occurs during the execution of the script, it will be logged and the script will continue running. If the script is interrupted by a `Ctrl+C` signal, it will print the total counts of each keyword and exit gracefully.
 
 ## Testing
-You can test the script by running it and adding new entries to the log file. Check if the script correctly prints the new entries and counts the keywords.
+we can test the script by running it and adding new entries to the log file. now check if the script correctly prints the new entries and counts the keywords.
 
 ## Dependencies
 No external dependencies are required to run this script.
 
 ## Note
-This is a basic implementation and there are many ways to enhance this script, such as adding more advanced log analysis features, improving error handling, or making the script more robust and efficient.
+In this, the total counts of each keyword will be printed when Ctrl+C is pressed. Also, whenever a new message containing one of the keywords is found, it will be printed immediately with a prefix indicating the type of the message. This should make it easier to spot new error messages. Please note that this code will only work if it’s run in a console that supports Ctrl+C interrupt signal. If you’re running this code in an environment that doesn’t support Ctrl+C, you might need to find another way to send an interrupt signal to the script. The script is now more robust and efficient with the use of defaultdict for counting keywords and improved error handling.
+
+#log_file.log contains that the dummy logs that was generated from the dummy_log.py python script.
+
+
+
