@@ -30,7 +30,7 @@ we can test the script by running it and adding new entries to the log file. now
 ## Dependencies
 No external dependencies are required to run this script.
 
-![alt text](https://github.com/ManojM344/Devops_internship_assignment/blob/main/Result/output_result.png)
+![alt text](Result/result.png)
 
 ## Note
 In this, the total counts of each keyword will be printed when Ctrl+C is pressed. Also, whenever a new message containing one of the keywords is found, it will be printed immediately with a prefix indicating the type of the message. This should make it easier to spot new error messages. Please note that this code will only work if it’s run in a console that supports Ctrl+C interrupt signal. If you’re running this code in an environment that doesn’t support Ctrl+C, you might need to find another way to send an interrupt signal to the script. The script is now more robust and efficient with the use of defaultdict for counting keywords and improved error handling.
