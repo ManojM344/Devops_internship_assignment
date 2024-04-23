@@ -4,9 +4,10 @@ import os
 import signal
 import sys
 import random
+from collections import defaultdict
 
 # Configure logging
-logging.basicConfig(filename='./error_log.log', level=logging.DEBUG)
+logging.basicConfig(filename='./log_file.log', level=logging.DEBUG)
 
 # Create a logger
 logger = logging.getLogger(__name__)
@@ -40,13 +41,13 @@ def handler(signum, frame):
 signal.signal(signal.SIGINT, handler)
 
 # Initialize a dictionary to store keyword counts
-counts = {keyword: 0 for keyword in keywords}
+counts = defaultdict(int)
 
 # Get the size of the log file
-size = os.stat('error_log.log').st_size
+size = os.stat('log_file.log').st_size
 
 # Open the log file
-with open('error.log', 'r') as f:
+with open('log_file.log', 'r') as f:
     # Move to the end of the file
     f.seek(size)
 
@@ -83,4 +84,3 @@ with open('error.log', 'r') as f:
         # If the line is empty, sleep for a short interval
         else:
             time.sleep(1)
-
